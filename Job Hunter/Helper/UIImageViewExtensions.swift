@@ -9,10 +9,24 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+let imageCache = NSCache<NSString, AnyObject>()
+
+class CustomImageView: UIImageView {
+    var imageUrlString: String?
+    
+    func downloaded(from urlString: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        imageUrlString = urlString
+        let url = URL(string: urlString)
+        image = nil
+        
+        if let imageFromCache = imageCache.object(forKey: urlString as NSString)
+            as? UIImage {
+            self.image = imageFromCache
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url!) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
@@ -20,12 +34,13 @@ extension UIImageView {
                 let image = UIImage(data: data)
                 else { return }
             DispatchQueue.main.async() {
-                self.image = image
+                let imageToCache = image
+                if self.imageUrlString == urlString {
+                    self.image = imageToCache
+                }
+                imageCache.setObject(imageToCache, forKey: urlString as NSString)
             }
             }.resume()
     }
-    func downloaded(from link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
+
 }

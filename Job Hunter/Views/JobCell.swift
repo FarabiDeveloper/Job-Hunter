@@ -10,7 +10,7 @@ import UIKit
 
 class JobCell: UITableViewCell {
 
-    @IBOutlet weak var jobImage: UIImageView!
+    @IBOutlet weak var jobImage: CustomImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var location: UILabel!
     
@@ -20,12 +20,16 @@ class JobCell: UITableViewCell {
     }
 
     func setup(job: Job) {
-        guard let companyLogo = job.company_logo  else {
+        guard let companyLogo = job.company_logo, companyLogo != ""  else {
             self.title.text = job.title
             self.location.text = job.location
+            //var image = UIImage(named: "job")!
+            self.jobImage.image = UIImage(named: "job")
+            //self.jobImage = UIImageView(image: image) as! CustomImageView
             return
         }
         self.jobImage.downloaded(from: companyLogo)
+        print("companyLogo: \(job.company_logo)")
         self.title.text = job.title
         self.location.text = job.location
     }

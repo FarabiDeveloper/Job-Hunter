@@ -14,16 +14,16 @@ class MainViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var jobs: [Job] = []
-    let convertProvider = MoyaProvider<Api>()
+    let hunterProvider = MoyaProvider<Api>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getAllJobs()
-        // Do any additional setup after loading the view, typically from a nib.
+ 
     }
     
     func getAllJobs() {
-        self.convertProvider.request(.searchJobs()) { (result) in
+        self.hunterProvider.request(.searchJobs()) { (result) in
             if let error = result.error {
                 self.showAlert(error.localizedDescription)
                 return

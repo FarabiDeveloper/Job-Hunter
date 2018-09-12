@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GT6-7A-mBm">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="job" translatesAutoresizingMaskIntoConstraints="NO" id="GT6-7A-mBm" customClass="CustomImageView" customModule="Job_Hunter" customModuleProvider="target">
                                             <rect key="frame" x="5" y="4.5" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="DGw-oZ-4ws"/>
@@ -62,7 +62,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="jobImage" destination="GT6-7A-mBm" id="jxh-Km-Abt"/>
+                                    <outlet property="jobImage" destination="GT6-7A-mBm" id="X23-J3-eJr"/>
                                     <outlet property="location" destination="Ov2-1a-1ip" id="t6S-bn-PkG"/>
                                     <outlet property="title" destination="c8U-37-Wbf" id="nDW-UQ-jC3"/>
                                 </connections>
@@ -99,4 +99,7 @@
             <point key="canvasLocation" x="-105" y="47"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="job" width="64" height="64"/>
+    </resources>
 </document>
