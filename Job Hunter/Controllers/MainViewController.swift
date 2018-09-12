@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MainController.swift
 //  Job Hunter
 //
 //  Created by Farabi on 09.09.2018.
@@ -19,8 +19,25 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getAllJobs()
- 
+        self.setupNavBar()
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        imageCache.removeAllObjects()
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination == "JobDetails" {
+//            let destVC = segue.destination as! JobDetailController
+//            destVC.jo
+//        }
+//    }
+    
+    func setupNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     
     func getAllJobs() {
         self.hunterProvider.request(.searchJobs()) { (result) in
@@ -62,6 +79,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(job: job)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "JobDetail") as! JobDetailController
+        vc.navigationItem.title = jobs[indexPath.row].company
+        vc.job = jobs[indexPath.row]
+        //print("vc.shareSerialNumber: \(vc.shopId)")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
