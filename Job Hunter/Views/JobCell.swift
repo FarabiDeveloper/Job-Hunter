@@ -16,20 +16,16 @@ class JobCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setup(job: Job) {
         guard let companyLogo = job.company_logo, companyLogo != ""  else {
             self.title.text = job.title
             self.location.text = job.location
-            //var image = UIImage(named: "job")!
             self.jobImage.image = UIImage(named: "job")
-            //self.jobImage = UIImageView(image: image) as! CustomImageView
             return
         }
         self.jobImage.downloaded(from: companyLogo)
-        print("companyLogo: \(job.company_logo)")
         self.title.text = job.title
         self.location.text = job.location
     }

@@ -27,17 +27,9 @@ class MainViewController: UIViewController {
         imageCache.removeAllObjects()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination == "JobDetails" {
-//            let destVC = segue.destination as! JobDetailController
-//            destVC.jo
-//        }
-//    }
-    
     func setupNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
     
     func getAllJobs() {
         self.hunterProvider.request(.searchJobs()) { (result) in
@@ -48,9 +40,8 @@ class MainViewController: UIViewController {
             switch result {
             case .success(let response):
                 do {
-                    let convertResponse = try JSONDecoder().decode([Job].self, from: response.data)
-                    self.jobs = convertResponse
-                    //print("Jobs: \(self.jobs)")
+                    let jobsResponse = try JSONDecoder().decode([Job].self, from: response.data)
+                    self.jobs = jobsResponse
                     self.tableView.reloadData()
                 } catch let error {
                     print("error: \(error)")
@@ -85,7 +76,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "JobDetail") as! JobDetailController
         vc.navigationItem.title = jobs[indexPath.row].company
         vc.job = jobs[indexPath.row]
-        //print("vc.shareSerialNumber: \(vc.shopId)")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
