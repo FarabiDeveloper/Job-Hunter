@@ -39,6 +39,7 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         self.isSearching = false
         self.tableView.reloadData()
     }
+    //for testing
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         isSearching = false;
