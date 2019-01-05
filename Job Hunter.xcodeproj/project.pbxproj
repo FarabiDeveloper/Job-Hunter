@@ -16,6 +16,7 @@
 		CE23877A2147F0050099AAC4 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2387792147F0050099AAC4 /* UIImageViewExtensions.swift */; };
 		CE23877D2147F1910099AAC4 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23877C2147F1910099AAC4 /* Api.swift */; };
 		CE3250E72148D6B500FCEA2B /* JobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3250E62148D6B500FCEA2B /* JobDetailController.swift */; };
+		CE603E75214C1AD4003F02E0 /* SearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE603E74214C1AD3003F02E0 /* SearchInfo.swift */; };
 		CE90C1DB2145C21500056344 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C1DA2145C21500056344 /* Job.swift */; };
 		CE90C1DD2145C31000056344 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C1DC2145C31000056344 /* JobCell.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		CE2387792147F0050099AAC4 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		CE23877C2147F1910099AAC4 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		CE3250E62148D6B500FCEA2B /* JobDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailController.swift; sourceTree = "<group>"; };
+		CE603E74214C1AD3003F02E0 /* SearchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInfo.swift; sourceTree = "<group>"; };
 		CE90C1DA2145C21500056344 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		CE90C1DC2145C31000056344 /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		DDC6572963AFFA09C9C1234B /* Pods-Job Hunter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hunter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Job Hunter/Pods-Job Hunter.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				CE90C1DA2145C21500056344 /* Job.swift */,
+				CE603E74214C1AD3003F02E0 /* SearchInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				CE0AA00D21454FD800971E71 /* MainViewController.swift in Sources */,
 				CE90C1DB2145C21500056344 /* Job.swift in Sources */,
 				CE0AA00B21454FD800971E71 /* AppDelegate.swift in Sources */,
+				CE603E75214C1AD4003F02E0 /* SearchInfo.swift in Sources */,
 				CE23877A2147F0050099AAC4 /* UIImageViewExtensions.swift in Sources */,
 				CE90C1DD2145C31000056344 /* JobCell.swift in Sources */,
 			);

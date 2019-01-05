@@ -19,9 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="OVe-cH-tGy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="9fY-YN-uFq" id="8gU-Ri-0f1"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobCell" rowHeight="80" id="lbx-s7-d49" customClass="JobCell" customModule="Job_Hunter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbx-s7-d49" id="HcR-Xa-f6O">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -76,12 +84,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Job Hunter" id="j5Q-wr-Net"/>
                     <connections>
+                        <outlet property="searchBar" destination="OVe-cH-tGy" id="8qL-9c-8MP"/>
                         <outlet property="tableView" destination="PgG-qw-rNS" id="MQB-5U-2wo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHu-4n-hIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848" y="47"/>
+            <point key="canvasLocation" x="745" y="46"/>
         </scene>
         <!--Job Detail Controller-->
         <scene sceneID="CR6-aZ-4uA">

@@ -13,7 +13,7 @@ import Result
 import SwiftyJSON
 
 enum Api {
-    case searchJobs()
+    case searchJobs(info: SearchInfo)
 }
 
 extension Api: TargetType {
@@ -25,7 +25,7 @@ extension Api: TargetType {
     
     var path: String {
         switch self {
-        case .searchJobs():
+        case .searchJobs(_):
            return "positions.json"
         }
     }
@@ -52,7 +52,7 @@ extension Api: TargetType {
     var task: Task {
         switch self {
         case .searchJobs(let info):
-            let params: [String : Any] = ["search" : "java", "page" : "0"]
+            let params: [String : Any] = ["search" : info.search, "page" : info.page]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
     }

@@ -9,12 +9,42 @@
 import UIKit
 import Moya
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var jobs: [Job] = []
+    var filteredJobs: [Job] = []
+    var isSearching = false
     let hunterProvider = MoyaProvider<Api>()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("searchBar text: \(String(describing: searchBar.text))")
+        self.isSearching = true
+        guard let keywords = searchBar.text else {
+            return
+        }
+        if keywords == "" {
+            // обработать случай когда текст в поиске пустой
+
+        }
+        self.filteredJobs = jobs.filter { $0.title.contains(keywords)}
+        tableView.reloadData()
+        self.view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.isSearching = false
+        self.tableView.reloadData()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        isSearching = false;
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +62,8 @@ class MainViewController: UIViewController {
     }
     
     func getAllJobs() {
-        self.hunterProvider.request(.searchJobs()) { (result) in
+        let params = SearchInfo.init(search: "java", page: 0)
+        self.hunterProvider.request(.searchJobs(info: params)) { (result) in
             if let error = result.error {
                 self.showAlert(error.localizedDescription)
                 return
@@ -61,12 +92,21 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobs.count
+        if isSearching {
+            return filteredJobs.count
+        } else {
+            return jobs.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let job = jobs[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell") as! JobCell
+        var job = Job()
+        if isSearching {
+            job = filteredJobs[indexPath.row]
+        } else {
+            job = jobs[indexPath.row]
+        }
         cell.setup(job: job)
         
         return cell
