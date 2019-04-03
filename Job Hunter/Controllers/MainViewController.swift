@@ -19,20 +19,33 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     var isSearching = false
     let hunterProvider = MoyaProvider<Api>()
     let searchController = UISearchController(searchResultsController: nil)
+    var isEmpty = false
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("searchBar text: \(String(describing: searchBar.text))")
         self.isSearching = true
-        guard let keywords = searchBar.text else {
-            return
-        }
-        if keywords == "" {
-            // обработать случай когда текст в поиске пустой
-
-        }
+        guard let keywords = searchBar.text else { return }
         self.filteredJobs = jobs.filter { $0.title.contains(keywords)}
+        if keywords == "" {
+            filteredJobs = jobs
+            isEmpty = false
+        } else if self.filteredJobs.count == 0 {
+            isEmpty = true
+            showAlert()
+        } else {
+            isEmpty = false
+        }
+    
         tableView.reloadData()
         self.view.endEditing(true)
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Ничего не найдено", message: "Вакансии по данному ключевому слову отсутствуют", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
