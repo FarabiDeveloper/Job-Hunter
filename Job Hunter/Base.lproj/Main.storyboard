@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RIs-UC-Fsh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="en3-bB-nVI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -89,7 +89,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHu-4n-hIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="46"/>
+            <point key="canvasLocation" x="1236" y="719"/>
+        </scene>
+        <!--Избранное-->
+        <scene sceneID="tb7-Mw-ncR">
+            <objects>
+                <viewController id="hue-LP-vv1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a3s-SY-qrR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="i5t-KZ-dIa"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Избранное" image="star" id="noA-7N-Kjz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLb-1J-JmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="493" y="1415"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qez-rW-2Kr">
+            <objects>
+                <tabBarController id="en3-bB-nVI" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VOp-Ep-kRV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hue-LP-vv1" kind="relationship" relationship="viewControllers" id="zSP-Zy-Jua"/>
+                        <segue destination="RIs-UC-Fsh" kind="relationship" relationship="viewControllers" id="lqp-bv-TQx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UfF-vf-loi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459" y="1083"/>
         </scene>
         <!--Job Detail Controller-->
         <scene sceneID="CR6-aZ-4uA">
@@ -173,12 +207,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvr-r9-Pkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.8" y="45.42728635682159"/>
+            <point key="canvasLocation" x="2026" y="718"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Поиск-->
         <scene sceneID="SfL-s7-0lC">
             <objects>
                 <navigationController id="RIs-UC-Fsh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Поиск" image="search" id="BQk-BM-IMS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OPl-PQ-FrE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -189,10 +224,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZv-Fn-acW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="47"/>
+            <point key="canvasLocation" x="492" y="719"/>
         </scene>
     </scenes>
     <resources>
         <image name="job" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="search" width="48" height="48"/>
+        <image name="star" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
 </document>

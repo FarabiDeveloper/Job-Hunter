@@ -42,9 +42,7 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     
     func showAlert() {
         let alert = UIAlertController(title: "Ничего не найдено", message: "Вакансии по данному ключевому слову отсутствуют", preferredStyle: UIAlertController.Style.alert)
-        
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -56,8 +54,6 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         isSearching = false;
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

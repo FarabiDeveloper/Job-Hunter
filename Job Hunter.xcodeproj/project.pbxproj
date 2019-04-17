@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41C3DA9B2263B00500F6B311 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C3DA9A2263B00500F6B311 /* MainTabBarController.swift */; };
 		6DB34CF26D2493E440909979 /* Pods_Job_Hunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DD5C572B7793F36310E9F2 /* Pods_Job_Hunter.framework */; };
 		CE0AA00B21454FD800971E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AA00A21454FD800971E71 /* AppDelegate.swift */; };
 		CE0AA00D21454FD800971E71 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AA00C21454FD800971E71 /* MainViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		40DD5C572B7793F36310E9F2 /* Pods_Job_Hunter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_Hunter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41C3DA9A2263B00500F6B311 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		92F3C8FE4C1E74F5AE92F331 /* Pods-Job Hunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hunter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Job Hunter/Pods-Job Hunter.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0AA00721454FD800971E71 /* Job Hunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Hunter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0AA00A21454FD800971E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0AA00C21454FD800971E71 /* MainViewController.swift */,
+				41C3DA9A2263B00500F6B311 /* MainTabBarController.swift */,
 				CE3250E62148D6B500FCEA2B /* JobDetailController.swift */,
 			);
 			path = Controllers;
@@ -276,6 +279,7 @@
 			files = (
 				CE23877D2147F1910099AAC4 /* Api.swift in Sources */,
 				CE3250E72148D6B500FCEA2B /* JobDetailController.swift in Sources */,
+				41C3DA9B2263B00500F6B311 /* MainTabBarController.swift in Sources */,
 				CE0AA00D21454FD800971E71 /* MainViewController.swift in Sources */,
 				CE90C1DB2145C21500056344 /* Job.swift in Sources */,
 				CE0AA00B21454FD800971E71 /* AppDelegate.swift in Sources */,
