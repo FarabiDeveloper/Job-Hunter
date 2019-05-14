@@ -1,30 +1,38 @@
 PODS:
-  - Alamofire (4.7.3)
-  - Moya (11.0.2):
-    - Moya/Core (= 11.0.2)
-  - Moya/Core (11.0.2):
+  - Alamofire (4.8.2)
+  - GRDB.swift (3.7.0)
+  - Kanna (4.0.3)
+  - Moya (13.0.0):
+    - Moya/Core (= 13.0.0)
+  - Moya/Core (13.0.0):
     - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Result (3.2.4)
-  - SwiftyJSON (4.1.0)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - GRDB.swift
+  - Kanna (~> 4.0.0)
   - Moya
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
+    - GRDB.swift
+    - Kanna
     - Moya
     - Result
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  GRDB.swift: 51cc9e57ae8ff7083a9d674c97925aa1de06aac5
+  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  Moya: 161263550064ff8a4948e8ff63137fd72a876292
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: f7090a4feea2e9578df6c01620b57e6b92d84916
+PODFILE CHECKSUM: f14140fd7aeac151e4c7ea898c8a95f57b709b5a
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

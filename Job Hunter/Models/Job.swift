@@ -35,4 +35,18 @@ struct Job: Decodable {
         self.url = ""
     }
     
+    init(littleJob: LittleJob) {
+        self.id = littleJob.id
+        self.created_at = littleJob.created_at
+        self.title = littleJob.title
+        self.location = littleJob.location
+        self.description = littleJob.description
+        self.company_logo = littleJob.company_logo
+        self.type = ""
+        self.how_to_apply = ""
+        self.company = ""
+        self.company_url = ""
+        self.url = ""
+    }
+    
 }

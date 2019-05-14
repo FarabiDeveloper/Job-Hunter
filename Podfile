@@ -6,6 +6,8 @@ target 'Job Hunter' do
   use_frameworks!
 	pod 'Moya'
   	pod 'SwiftyJSON'
+	pod 'Kanna', '~> 4.0.0'
+    pod 'GRDB.swift'
   # Pods for Job Hunter
 
 end

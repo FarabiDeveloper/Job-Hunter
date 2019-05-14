@@ -61,6 +61,9 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         self.setupNavBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("test")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         imageCache.removeAllObjects()
@@ -122,6 +125,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DataBaseService.sharedInstance.writeToDatabase(newJob: jobs[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "JobDetail") as! JobDetailController
         vc.navigationItem.title = jobs[indexPath.row].company
         vc.job = jobs[indexPath.row]

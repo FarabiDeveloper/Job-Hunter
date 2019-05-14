@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		41C3DA9B2263B00500F6B311 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C3DA9A2263B00500F6B311 /* MainTabBarController.swift */; };
+		41CAED76226773C600E72333 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CAED75226773C600E72333 /* FavoritesViewController.swift */; };
+		41CAED78226773DE00E72333 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CAED77226773DE00E72333 /* Database.swift */; };
+		41F5962C227024A900DBFB37 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F5962B227024A900DBFB37 /* FavoriteCell.xib */; };
+		41F5962E227024FF00DBFB37 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5962D227024FF00DBFB37 /* FavoriteTableViewCell.swift */; };
 		6DB34CF26D2493E440909979 /* Pods_Job_Hunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DD5C572B7793F36310E9F2 /* Pods_Job_Hunter.framework */; };
 		CE0AA00B21454FD800971E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AA00A21454FD800971E71 /* AppDelegate.swift */; };
 		CE0AA00D21454FD800971E71 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AA00C21454FD800971E71 /* MainViewController.swift */; };
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		40DD5C572B7793F36310E9F2 /* Pods_Job_Hunter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_Hunter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C3DA9A2263B00500F6B311 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		41CAED75226773C600E72333 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		41CAED77226773DE00E72333 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		41F5962B227024A900DBFB37 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
+		41F5962D227024FF00DBFB37 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		92F3C8FE4C1E74F5AE92F331 /* Pods-Job Hunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hunter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Job Hunter/Pods-Job Hunter.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0AA00721454FD800971E71 /* Job Hunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Hunter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0AA00A21454FD800971E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				CE23877C2147F1910099AAC4 /* Api.swift */,
+				41CAED77226773DE00E72333 /* Database.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -134,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				CE90C1DA2145C21500056344 /* Job.swift */,
+				41F5962B227024A900DBFB37 /* FavoriteCell.xib */,
+				41F5962D227024FF00DBFB37 /* FavoriteTableViewCell.swift */,
 				CE603E74214C1AD3003F02E0 /* SearchInfo.swift */,
 			);
 			path = Models;
@@ -153,6 +164,7 @@
 				CE0AA00C21454FD800971E71 /* MainViewController.swift */,
 				41C3DA9A2263B00500F6B311 /* MainTabBarController.swift */,
 				CE3250E62148D6B500FCEA2B /* JobDetailController.swift */,
+				41CAED75226773C600E72333 /* FavoritesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0AA01521454FD900971E71 /* LaunchScreen.storyboard in Resources */,
+				41F5962C227024A900DBFB37 /* FavoriteCell.xib in Resources */,
 				CE0AA01221454FD900971E71 /* Assets.xcassets in Resources */,
 				CE0AA01021454FD800971E71 /* Main.storyboard in Resources */,
 			);
@@ -234,6 +247,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Job Hunter/Pods-Job Hunter-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -242,6 +256,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -278,6 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE23877D2147F1910099AAC4 /* Api.swift in Sources */,
+				41F5962E227024FF00DBFB37 /* FavoriteTableViewCell.swift in Sources */,
+				41CAED78226773DE00E72333 /* Database.swift in Sources */,
 				CE3250E72148D6B500FCEA2B /* JobDetailController.swift in Sources */,
 				41C3DA9B2263B00500F6B311 /* MainTabBarController.swift in Sources */,
 				CE0AA00D21454FD800971E71 /* MainViewController.swift in Sources */,
@@ -285,6 +302,7 @@
 				CE0AA00B21454FD800971E71 /* AppDelegate.swift in Sources */,
 				CE603E75214C1AD4003F02E0 /* SearchInfo.swift in Sources */,
 				CE23877A2147F0050099AAC4 /* UIImageViewExtensions.swift in Sources */,
+				41CAED76226773C600E72333 /* FavoritesViewController.swift in Sources */,
 				CE90C1DD2145C31000056344 /* JobCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

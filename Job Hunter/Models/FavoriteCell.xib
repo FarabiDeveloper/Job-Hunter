@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTableViewCell" rowHeight="80" id="ZDg-lx-KhO" customClass="FavoriteTableViewCell" customModule="Job_Hunter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZDg-lx-KhO" id="ROt-E5-vff">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hBm-TJ-ggb" customClass="CustomImageView" customModule="Job_Hunter" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="6Ow-la-rSK"/>
+                            <constraint firstAttribute="height" constant="70" id="p3h-B7-VVk"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDS-3n-xde">
+                        <rect key="frame" x="90" y="21" width="232" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSo-TV-TcD">
+                        <rect key="frame" x="90" y="50" width="254" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQU-ef-qwb" userLabel="isFavoriteButton">
+                        <rect key="frame" x="337" y="15" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="RF9-l0-Akg"/>
+                            <constraint firstAttribute="height" constant="23" id="Yca-9z-IpA"/>
+                        </constraints>
+                        <state key="normal" image="isFavorite"/>
+                        <connections>
+                            <action selector="checkFavoriteJob" destination="ZDg-lx-KhO" eventType="touchUpInside" id="PI1-gf-l9j"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hBm-TJ-ggb" firstAttribute="top" secondItem="ROt-E5-vff" secondAttribute="top" constant="5" id="0WO-Mj-iUj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="RSo-TV-TcD" secondAttribute="trailing" constant="15" id="4D2-QT-F3L"/>
+                    <constraint firstItem="RSo-TV-TcD" firstAttribute="leading" secondItem="hBm-TJ-ggb" secondAttribute="trailing" constant="15" id="By3-QZ-OO8"/>
+                    <constraint firstItem="hBm-TJ-ggb" firstAttribute="leading" secondItem="ROt-E5-vff" secondAttribute="leading" constant="5" id="IC5-lM-knf"/>
+                    <constraint firstItem="iQU-ef-qwb" firstAttribute="leading" secondItem="tDS-3n-xde" secondAttribute="trailing" constant="15" id="IgV-oZ-WpH"/>
+                    <constraint firstItem="iQU-ef-qwb" firstAttribute="top" secondItem="ROt-E5-vff" secondAttribute="top" constant="15" id="JfY-bt-IJ1"/>
+                    <constraint firstAttribute="bottom" secondItem="hBm-TJ-ggb" secondAttribute="bottom" constant="5" id="P1I-EA-kdw"/>
+                    <constraint firstItem="RSo-TV-TcD" firstAttribute="top" secondItem="tDS-3n-xde" secondAttribute="bottom" constant="8" id="ZRG-Pd-VVf"/>
+                    <constraint firstItem="tDS-3n-xde" firstAttribute="top" secondItem="ROt-E5-vff" secondAttribute="topMargin" constant="10" id="Zxz-Mv-xpy"/>
+                    <constraint firstItem="tDS-3n-xde" firstAttribute="leading" secondItem="hBm-TJ-ggb" secondAttribute="trailing" constant="15" id="g5y-6i-H8x"/>
+                    <constraint firstItem="RSo-TV-TcD" firstAttribute="bottom" secondItem="ROt-E5-vff" secondAttribute="bottomMargin" constant="5" id="mbg-tp-fKv"/>
+                    <constraint firstAttribute="trailing" secondItem="iQU-ef-qwb" secondAttribute="trailing" constant="15" id="moX-a3-UAZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="companyImageView" destination="hBm-TJ-ggb" id="mvt-5S-jGc"/>
+                <outlet property="isFavoriteButton" destination="iQU-ef-qwb" id="EJF-NF-bse"/>
+                <outlet property="locationLabel" destination="RSo-TV-TcD" id="dgS-mU-4tm"/>
+                <outlet property="titleLabel" destination="tDS-3n-xde" id="mgU-Q9-S3r"/>
+            </connections>
+            <point key="canvasLocation" x="-119.2" y="114.24287856071965"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="isFavorite" width="25.600000381469727" height="25.600000381469727"/>
+    </resources>
+</document>
